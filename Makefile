@@ -27,8 +27,8 @@ install:	# TODO: Add a Docker analysis (DevSecOps)
 	# ansible --version
 	# ansible-lint --version
 	echo
-	echo "Installing: shellcheck"
-	./bin/install_shellcheck.sh
+	##echo "Installing: shellcheck"
+	##./bin/install_shellcheck.sh
 	echo
 	echo "Installing: hadolint"
 	./bin/install_hadolint.sh
