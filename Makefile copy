@@ -21,6 +21,23 @@ install:	# TODO: Add a Docker analysis (DevSecOps)
 	echo "Installing: dependencies..."
 	pip install --upgrade pip &&\
 		pip install -r hello_app/requirements.txt
+	# pip install "ansible-lint[community,yamllint]"
+	echo
+	pytest --version
+	# ansible --version
+	# ansible-lint --version
+	echo
+	##echo "Installing: shellcheck"
+	##./bin/install_shellcheck.sh
+	echo
+	echo "Installing: hadolint"
+	./bin/install_hadolint.sh
+	echo
+	echo "Installing: kubectl"
+	./bin/install_kubectl.sh
+	echo
+	echo "Installing: eksctl"
+	./bin/install_eksctl.sh
 	
 test:
 	# Additional, optional, tests could go here
@@ -37,7 +54,7 @@ lint:
 	pylint --output-format=colorized --disable=C hello_app/hello.py
 
 run-app:
-	python hello_app/hello.py
+	python3 hello_app/hello.py
 
 build-docker:
 	./bin/build_docker.sh
